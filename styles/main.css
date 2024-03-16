@@ -1,0 +1,142 @@
+main {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1440px;
+}
+
+.main_info {
+    width: 100%;
+    max-width: 570px;
+}
+
+.main_info p {
+    font-size: 18px;
+    margin: 20px 0 28px;
+}
+
+.main_info div{
+    display: flex;
+    column-gap: 32px;
+
+}
+
+.main_info div a, .main_info div button {
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 3px;
+
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+
+    transform: skew(-10deg);
+}
+
+.main_info div a {
+    background: pink;
+    color: black;
+}
+
+.main_info div button {
+    background: transparent;
+    border: 1px solid var(--red);
+    transition: 0.4s;
+}
+
+.main_info div button:hover {
+    background: var(--red);;
+}
+
+main .ilustracao {
+    animation: float 3s ease-in-out infinite;
+}
+
+
+@media (max-width: 1100px) { 
+    main{
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 40px;
+    }
+
+    .main_info {
+        padding-top: 10px;
+        height: 100%;
+    }
+
+    .ilustracao {
+        width: 500px;
+        height: auto;
+        margin-right: 0px;
+        align-items: flex-start;
+    }
+
+    .main-image img {
+        width: 85%;
+        -webkit-animation: floatingColumn 4s linear infinite;
+        animation: floatingColumn 4s linear infinite;
+    }
+}
+
+@media (max-width: 995px) {
+    .main_info a button {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    main .main_info {
+        padding-top: 80px;
+    }
+
+    .main_info .ilustracao {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .main_info p {
+        font-size: 0;
+        line-height: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    main .main_info {
+        gap: 60px;
+    }
+
+    .ilustracao,
+    .main_info {
+        padding: 0px 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .main_info {
+        padding: 0px 20px;
+    }
+    .main_info .ilustracao {
+        font-size: 45px;
+        line-height: 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+}
